@@ -1,0 +1,182 @@
+<style>
+  h1, h2, h3, h4, h5 {
+    padding: 0;
+  }
+  
+  h1, h2, h4 {
+    font-weight: 400;
+  }
+  
+  h2,h3 {
+    margin:0 0 1em;
+  }
+  
+  h4, h5 {
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+  
+  h4 {
+    font-size: 13px;
+  }
+  
+  ol {
+    list-style: none;
+  }
+  figure, ol, ol li, ul, ul li {
+    margin: 0;
+  }
+  
+  .currentConditions table td:nth-child(1) {
+    color: lightgray;
+    font-size: 14px;
+  }
+
+  .currentConditions table td:nth-child(2) {
+    font-size: 15px;
+  }
+  .heading {
+    font-size: 24px;
+    padding-left: 10px;
+  }
+
+  .temp {
+    font-size: 30px;
+    padding: 0 10;
+    float: left;
+  }
+
+  .value--cold {
+    color: #0062bf;
+  }
+
+  .value--warm {
+    color: #c60000;;
+  }
+
+  .forecast {
+    float: left;
+    padding-left: 10px;
+  }
+
+  .yr-weather {
+    border-top: 1px solid gray;
+    font-size: 15px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.05);
+    height: 8.6em;
+    margin-bottom: .4em;
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+  }
+  
+  .yr-weather ol {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: .6em;
+  }
+  
+  .yr-weather .column {
+    border-right: 1px solid #d6dadc;
+    display: inline-block;
+    padding-bottom: 1em;
+    position: relative;
+    text-align: center;
+    width: 7em;
+  }
+  .yr-weather .column:first-child {
+    margin-left: 1em;
+  }
+  .yr-weather .column:nth-child(4) {
+    border-right: none;
+  }
+  
+  .yr-weather .column-heading {
+    bottom: 0;
+    font-size: .866666667em;
+    position: absolute;
+    text-transform: none;
+    width: 100%;
+}
+  
+  .yr-weather .temp {
+    left: 66%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    font-size: 15px;
+  }
+
+  .yr-weather .symbol {
+    display: inline-block;
+    height: 2.8em;
+    margin: .4em 0 0;
+    width: 2.8em;
+  }
+
+</style>
+<div data-ui-field="widget" class="main ui-overlay-shadow ui-body-inherit ui-corner-all hg-widget-c">
+  <div class="ui-body-inherit ui-corner-all" style="position:absolute;opacity:0.8;z-index:-1;left:0;top:0;right:0;bottom:0"></div>
+  <div class="ui-header" style="padding-left:5px;padding-right:5px;font-weight:normal;border:0">
+    <div data-ui-field="name" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width:380px;font-size:16pt;font-weight:bold;padding:6px;">Hamar</div>
+    <a data-ui-field="settings" data-role="button" data-icon="gear" data-iconshadow="false" data-iconpos="notext" class="ui-btn-right">Innstillinger</a>
+  </div>
+  <div class="ui-grid-a currentConditions">
+    <div class="ui-block-a forecast" align="left">
+		<span data-ui-field="temp_now_value" class="temp aboveZero">4??</span>
+      <img data-ui-field="forecast_symbol" src="pages/control/widgets/weather/yr/images/weather_symbols/03d.png" />
+    </div>
+    <div class="ui-block-b" align="left">
+      <table>
+        <tr>
+          <td>F&oslash;les som: </td>
+          <td><span data-ui-field="forecast_feels_like">3??</span></td>
+        <tr>
+          <td>Vind: </td>
+          <td><span data-ui-field="forecast_wind">Lett bris</span></td>
+        </tr>
+        <tr>
+          <td>Luftfuktighet: </td>
+          <td><span data-ui-field="forecast_humidity">23 %</span></td>
+        </tr>
+        <tr>
+          <td>Min/maks temp.: </td>
+          <td><span data-ui-field="forecast_temp_min" class="belowZero">-4??</span> / <span data-ui-field="forecast_temp_max" class="aboveZero">8??</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="yr-weather">
+    <h3>Varsel fra Yr</h3>
+    <ol>
+      <li class="column">
+        <h4 data-ui-field="forecast_timespan_1" class="column-heading">0 - 6</h4>
+        <img data-ui-field="forecast_symbol_1" class="symbol" src="02n.png" />
+        <span data-ui-field="forecast_temp_1" class="temp belowZero">-2??</span>
+      </li>
+      <li class="column">
+        <h4 data-ui-field="forecast_timespan_2" class="column-heading">6 - 12</h4>
+        <img data-ui-field="forecast_symbol_2" class="symbol" src="01d.png" />
+        <span data-ui-field="forecast_temp_2" class="temp aboveZero">7??</span>
+      </li>
+      <li class="column">
+        <h4 data-ui-field="forecast_timespan_3" class="column-heading">12 - 18</h4>
+        <img data-ui-field="forecast_symbol_3" class="symbol" src="01d.png" />
+        <span data-ui-field="forecast_temp_3" class="temp aboveZero">8??</span>
+      </li>
+      <li class="column">
+        <h4 data-ui-field="forecast_timespan_4" class="column-heading">18 - 24</h4>
+        <img data-ui-field="forecast_symbol_4" class="symbol" src="03d.png" />
+        <span data-ui-field="forecast_temp_4" class="temp belowZero">-0??</span>
+      </li>
+    </ol>
+  </div>
+  <div data-ui-field="update_value" align="center" style="font-size:9pt;">waiting for data...</div>
+</div>
